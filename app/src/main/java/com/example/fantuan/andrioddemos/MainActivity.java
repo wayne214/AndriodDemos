@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         swipeRefreshLayout = findViewById(R.id.swiperefresh);
 
         swipeRefreshLayout.setRefreshHeader(new BezierRadarHeader(this).setEnableHorizontalDrag(true));
-
+        // 下拉刷新
         swipeRefreshLayout.setOnRefreshListener(this);
-
+        // 上拉加载
         swipeRefreshLayout.setOnLoadMoreListener(this);
 
         myRecylerView = findViewById(R.id.my_recycler_view);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         datas.clear();
         initDatas();
         swipeRefreshLayout.finishRefresh();
-
+        // 通知数据刷新
         adapter.notifyDataSetChanged();
     }
 

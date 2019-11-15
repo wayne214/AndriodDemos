@@ -14,7 +14,7 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     // 添加点击事件
-
+    // 1.添加接口
     public interface OnItemClickListener{
         void onItemClick(View view, int position);
         void onItemLongClick(View view, int position);
