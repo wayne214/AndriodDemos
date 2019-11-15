@@ -1,5 +1,6 @@
 package com.example.fantuan.andrioddemos;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,12 +13,14 @@ import com.example.fantuan.andrioddemos.adapters.MyAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     private RecyclerView myRecylerView;
     private RecyclerView.LayoutManager layoutManager;
     private MyAdapter adapter;
-    private List<String> datas;
+    private List<String> datas = new ArrayList<>();;
+
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     }
 
     private void initView() {
+        swipeRefreshLayout = findViewById(R.id.swiperefresh);
+
+        swipeRefreshLayout.setOnRefreshListener(this);
+
         myRecylerView = findViewById(R.id.my_recycler_view);
         myRecylerView.setHasFixedSize(true);
 
@@ -44,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     }
 
     private void initDatas() {
-        datas = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             datas.add("数据"+i);
         }
@@ -58,5 +64,14 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     @Override
     public void onItemLongClick(View view, int position) {
         adapter.delateData(position);
+    }
+    // 下拉刷新
+
+    @Override
+    public void onRefresh() {
+        datas.clear();
+        initDatas();
+        swipeRefreshLayout.setRefreshing(false);
+        adapter.notifyDataSetChanged();
     }
 }
