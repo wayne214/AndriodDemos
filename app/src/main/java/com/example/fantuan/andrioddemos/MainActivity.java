@@ -101,34 +101,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
                             });
                         }
                     });
-
-
-//                    if (response.isSuccessful()) {
-//                        String result = response.body().string();
-//                        JSONObject obj = new JSONObject(result);
-//                        JSONArray data = obj.getJSONArray("data");
-//                        String title = data.getJSONObject(0).optString("title");
-//                        String desc = data.getJSONObject(0).optString("desc");
-//                        String imagePath = data.getJSONObject(0).optString("imagePath");
-//
-//
-//                        BannerBean bean = new BannerBean();
-//
-////                        bean.setTitle(title);
-////                        bean.setDesc(desc);
-////                        bean.setImagePath(imagePath);
-//
-//                        Gson gson = new Gson();
-//                        BannerBean bean1 = gson.fromJson(result, BannerBean.class);
-//                        Log.d(TAG, "response: "+ result);
-//                        Log.d(TAG, "bannerBean: "+ bean1.getData().get(0).getTitle());
-//
-//                        List<BannerBean.DataBean> data1 = bean1.getData();
-//                        for (int i = 0; i < data1.size() ; i++) {
-//                            String imagePath1 = data1.get(i).getImagePath();
-//                            imageList.add(imagePath1);
-//                        }
-//                    }
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
