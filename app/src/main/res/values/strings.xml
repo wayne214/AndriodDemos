@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">AndriodDemos</string>
     <string name="edit_text_hint">请输入</string>
+    <string name="title_activity_custom_view_group">CustomViewGroupActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
