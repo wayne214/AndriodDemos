@@ -2,6 +2,8 @@ package com.example.fantuan.andrioddemos;
 import	java.io.IOException;
 import	java.io.PrintWriter;
 
+import android.app.IntentService;
+import android.os.HandlerThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
