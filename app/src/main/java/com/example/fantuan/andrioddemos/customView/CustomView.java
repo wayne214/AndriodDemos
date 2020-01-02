@@ -17,10 +17,15 @@ import android.view.View;
 import com.example.fantuan.andrioddemos.R;
 
 public class CustomView extends View{
+    // 文本
     private String mTitleText;
+    // 文本颜色
     private int mTitleTextColor;
+    // 文本大小
     private int mTitleTextSize;
-
+    /**
+     * 绘制时控制文本绘制的方位
+     * */
     private Rect mBound;
     private Paint mPaint;
 

@@ -16,6 +16,17 @@
     android:padding="10dp"
     />
 
+    <com.example.fantuan.andrioddemos.customView.CustomImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:image="@mipmap/fireworks"
+        app:imageScaleType="center"
+        app:titleText="Hello android"
+        app:titleTextColor="#0ff000"
+        app:titleTextSize="30sp" />
+
 
 </LinearLayout>
 
