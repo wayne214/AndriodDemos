@@ -15,7 +15,6 @@ import com.example.fantuan.andrioddemos.adapters.MyAdapter;
 import com.example.fantuan.andrioddemos.bean.BannerBean;
 import com.example.fantuan.andrioddemos.utils.GlideImageLoader;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.header.BezierRadarHeader;
@@ -23,8 +22,6 @@ import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
