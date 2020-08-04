@@ -11,9 +11,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        PieImageView pieImageView = findViewById(R.id.pieImageView);
-        pieImageView.setProgress(50);
+        setContentView(R.layout.activity_flow_layout);
+//        PieImageView pieImageView = findViewById(R.id.pieImageView);
+//        pieImageView.setProgress(50);
     }
 
 
