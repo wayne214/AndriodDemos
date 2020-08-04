@@ -16,4 +16,11 @@
         app:myTitleText="Custom toolbar"
         />
 
+    <com.example.fantuan.andrioddemos.customView.PieImageView
+        android:id="@+id/pieImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ccbbbb"
+        />
+
 </LinearLayout>
