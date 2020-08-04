@@ -24,4 +24,12 @@
         <attr name="imageScaleType"/>
     </declare-styleable>
 
+    <declare-styleable name="CustomToolBar">
+        <attr name="myTitleText" format="string|reference"/>
+        <attr name="myTitleTextColor" format="color|reference"/>
+        <attr name="myTitleTextSize" format="dimension|reference"/>
+        <attr name="leftImageSrc" format="reference"/>
+        <attr name="rightImageSrc" format="reference"/>
+    </declare-styleable>
+
 </resources>

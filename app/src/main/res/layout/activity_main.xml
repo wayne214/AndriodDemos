@@ -7,23 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.youth.banner.Banner
-        android:id="@+id/header_banner"
+    <com.example.fantuan.andrioddemos.customView.CustomToolBar
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
-
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/swiperefresh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/my_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"/>
-
-
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
+        android:layout_height="35dp"
+        android:background="#bbbbbb"
+        app:leftImageSrc="@mipmap/ic_launcher"
+        app:rightImageSrc="@mipmap/ic_launcher"
+        app:myTitleText="Custom toolbar"
+        />
 
 </LinearLayout>
