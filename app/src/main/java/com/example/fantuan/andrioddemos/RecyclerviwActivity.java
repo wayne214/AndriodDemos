@@ -21,11 +21,15 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
 
 import java.io.IOException;
+import java.net.Proxy;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -60,6 +64,16 @@ public class RecyclerviwActivity extends AppCompatActivity implements MyAdapter.
             @Override
             public void run() {
                 try {
+                    //使用内部工厂类Builder设置OkHttpClient
+//                    OkHttpClient.Builder builder = new OkHttpClient.Builder();
+//                    builder.connectTimeout(60, TimeUnit.SECONDS)
+//                            .addInterceptor(interceptor)
+//                            .proxy(proxy)
+//                            .cache(new Cache(getCacheDir(), 20*1024*1024));
+//
+//                    OkHttpClient client = builder.build();
+
+
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
                             .url("https://www.wanandroid.com/banner/json")

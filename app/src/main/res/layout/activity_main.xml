@@ -23,4 +23,9 @@
         android:background="#ccbbbb"
         />
 
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+
 </LinearLayout>
