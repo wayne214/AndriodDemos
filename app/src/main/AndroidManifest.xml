@@ -58,7 +58,10 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".RecyclerviwActivity"></activity>
+        <activity android:name=".RecyclerviwActivity" />
+        <activity android:name=".ImageCacheActivity" />
+        <activity android:name=".RegionBitmapActivity" />
+        <activity android:name=".BitmapPoolActivity"></activity>
     </application>
 
 </manifest>
