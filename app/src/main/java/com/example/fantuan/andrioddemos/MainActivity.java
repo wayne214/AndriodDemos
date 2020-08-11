@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.fantuan.andrioddemos.customView.PieImageView;
 import com.example.fantuan.andrioddemos.utils.SquareUtils;
 import com.squareup.picasso.Picasso;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         PieImageView pieImageView = ((PieImageView) findViewById(R.id.pieImageView));
+
+//        Glide.with(this).load("").into(lv);
 //        pieImageView.setProgress(50);
 
         lv = findViewById(R.id.image_view);
