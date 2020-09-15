@@ -1,5 +1,7 @@
 package com.example.fantuan.andrioddemos;
+import	java.lang.ref.WeakReference;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapRegionDecoder;
@@ -31,7 +33,7 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "MainActivity";
-    public final int MSG_DOWN_FAIL = 1;
+    public final static int MSG_DOWN_FAIL = 1;
     public final int MSG_DOWN_SUCCESS = 2;
     public final int MSG_DOWN_START = 3;
 
@@ -49,31 +51,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.tv_status)
     TextView tvShow;
 
-    private Handler handler = new Handler() {
+    private Handler myHandler;
+    // 静态内部类---防止handler内存泄露
+    private static class MyHandler extends Handler{
+        // 定义弱引用实例
+        private WeakReference <Activity> reference;
+        // 构造函数中传入需持有的Activity实例
+        public MyHandler(Activity activity){
+            // 使用WeakReference弱引用持有Activity实例
+            reference = new WeakReference<Activity>(activity);
+        }
+
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case MSG_DOWN_START:
-                    tvShow.setText("down start");
+                case 3:
+//                    tvShow.setText("down start");
                     break;
-                case MSG_DOWN_SUCCESS:
-                    tvShow.setText("down success");
+                case 2:
+//                    tvShow.setText("down success");
                     break;
-                case MSG_DOWN_FAIL:
-                    tvShow.setText("down fail");
+                case 1:
+//                    tvShow.setText("down fail");
                     break;
                 default:
                     break;
             }
         }
-    };
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        myHandler = new MyHandler(MainActivity.this);
+
         btnStart.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        myHandler.removeCallbacksAndMessages(null);
     }
 
     @Override
@@ -91,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void run() {
-            handler.sendEmptyMessage(MSG_DOWN_START);
+            myHandler.sendEmptyMessage(MSG_DOWN_START);
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
@@ -100,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Message msg = Message.obtain();
             msg.what = MSG_DOWN_SUCCESS;
-            handler.sendMessage(msg);
+            myHandler.sendMessage(msg);
 
         }
     }
