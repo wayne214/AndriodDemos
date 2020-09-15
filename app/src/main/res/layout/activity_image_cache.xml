@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ImageCacheActivity">
 
+    <com.example.fantuan.andrioddemos.customView.PieImageView
+        android:id="@+id/pieImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ccbbbb"
+        />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
 </android.support.constraint.ConstraintLayout>
